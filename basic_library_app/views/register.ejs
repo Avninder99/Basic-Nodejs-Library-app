@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+
+
+
+<form action="/register" method="POST">
+    <div class="ui large form container main2">
+        <h1>Student Register Page</h1>
+        <div class="two fields">
+            <div class="field">
+                <label>First Name</label>
+                <input placeholder="First Name" name="firstName" type="text" required>
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input placeholder="Last Name" name="lastName" type="text" required>
+            </div>
+        </div>
+        <div class="field">
+            <label>Roll Number</label>
+            <input placeholder="Last Name" name="rollNumber" type="number" required>
+        </div>
+        <button class="ui submit button">Submit</button>
+      </div>
+</form>
+
+<a href="/">Home</a>
+<%- include("partials/footer") %>

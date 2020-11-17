@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+
+<form action="/add_book" method="POST">
+    <div class="ui large form container main2">
+        <h1>Add New Book Page</h1>
+        <div class="two fields">
+            <div class="field">
+                <label>Book Name</label>
+                <input placeholder="First Name" name="bookName" type="text" required>
+            </div>
+            <div class="field">
+                <label>ISBN</label>
+                <input placeholder="Last Name" name="isbn" type="text" required>
+            </div>
+        </div>
+        <div class="field">
+            <label>Specific book number (5 digit)</label>
+            <input placeholder="Last Name" name="bookNumber" type="number" required>
+        </div>
+        <button class="ui submit button">Submit</button>
+      </div>
+</form>
+
+
+<%- include("partials/footer") %>

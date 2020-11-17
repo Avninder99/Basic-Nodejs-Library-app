@@ -1,0 +1,34 @@
+<%- include("partials/header") %>
+
+
+<!-- <form action="/issue" method="POST">
+    <div class="ui large form container main2">
+        <h1>Book Issue Page</h1>
+            <div class="field">
+                <label>Roll Number</label>
+                <input placeholder="Enter roll number of the student here" name="specificRollNumber" type="number" required>
+            </div>
+        <button class="ui submit button">Submit</button>
+      </div>
+</form> -->
+
+<div class="container main3">
+    <h1>Book Issue Page</h1>
+    <h2>Student Info will appear below</h2>
+    <h3>Name -> <%= foundedStudent.name %></h3>
+    <h3>Roll Number -> <%= foundedStudent.roll_number %></h3>
+    <h3>Fine -> <%= foundedStudent.fine %></h3>
+    <h3>Number of issued books -> <%= foundedStudent.issued_books.length %></h3>
+</div>
+
+<form action="/issue/<%=foundedStudent.roll_number%>" method="POST">
+    <div class="ui large form container main2">
+        <div class="field">
+            <label>Book's Serial Number</label>
+            <input placeholder="Enter Book number of the book to be issued here" name="specificBookNumber" type="number" required>
+        </div>
+        <button class="ui submit button">Submit</button>
+    </div>
+</form>
+
+<%- include("partials/footer") %>

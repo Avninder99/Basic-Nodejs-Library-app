@@ -1,0 +1,18 @@
+#main1{
+    margin-top: 100px;
+}
+.main2{
+    margin: 50px 0px;
+}
+.main3{
+    margin: 50px 200px;
+}
+#main4{
+    margin-top: 50px;
+}
+.main5{
+    border: orangered 1px solid;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 10px 50px;
+}

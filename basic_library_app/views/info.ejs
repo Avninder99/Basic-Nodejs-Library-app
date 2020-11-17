@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+
+<form action="/info" method="POST">
+    <div class="ui large form container main2">
+        <h1>Student Informatin Page</h1>
+            <div class="field">
+                <label>Roll Number</label>
+                <input placeholder="Enter roll number of the student here" name="specificRollNumber" type="number" required>
+            </div>
+        <button class="ui submit button">Submit</button>
+      </div>
+</form>
+<% if(foundedStudent.name != null){ %>
+<div class="container main3">
+    <h1>Student Info will appear below</h1>
+    <h3>Name -> <%= foundedStudent.name %></h3>
+    <h3>Roll Number -> <%= foundedStudent.roll_number %></h3>
+    <h3>Fine -> <%= foundedStudent.fine %></h3>
+    <h3>Number of issued books -> <%= foundedStudent.issued_books.length %></h3>
+    <h3>Issued books -></h3>
+    <% var i=0 %>
+    <% foundedStudent.issued_books.forEach(function(book){ %>
+        <div class="main5">
+            <p><strong>Name-> </strong><%=book.name%></p>
+            <p><strong>Serial Number -> </strong><%=book.book_serial_number%></p>
+            <form action="/return/<%=foundedStudent.roll_number%>/<%=i%>" method="POST">
+                <button class="ui button green">Return !</button>
+            </form>
+        </div>
+        <% i++ %>
+    <% }); %>
+    <a href="/issue/<%=foundedStudent.roll_number%>" class="ui submit button">Issue a Book !</a>
+</div>
+<%}%>
+
+<%- include("partials/footer") %>
